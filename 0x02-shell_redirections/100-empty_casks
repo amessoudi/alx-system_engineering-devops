@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -empty -print0 | xargs -0 -I {} echo "{}" | cut -d'/' -f2-
+find . -empty -print0 | rev | cut -d'/' -f1 | rev
