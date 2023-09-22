@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -empty -exec sh -c 'echo "${0##*/}"' {} \;
+find . \( -type f -o \( -type d -empty \) \) -empty -exec sh -c 'echo "${0##*/}"' {} \;
