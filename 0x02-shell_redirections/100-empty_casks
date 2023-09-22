@@ -1,2 +1,2 @@
 #!/bin/bash
-find . \( -type f -o \( -type d -empty \) \) -empty -exec sh -c 'echo "${0##*/}"' {} \;
+find . -type f -empty -print0 | xargs -0 -I {} echo "{}" | cut -d'/' -f2-
