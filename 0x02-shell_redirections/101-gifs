@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" -print0 | xargs -0 -n1 sh -c 'echo "${0##*/}"' | cut -d. -f1 | sort -k1,1 -f | sort -k1,1 -f -k2,2n
+find -type f -name "*.gif" | rev | cut -d "/" -f 1 | cut -d '.' -f 2- | rev | LC_ALL=C sort -f
