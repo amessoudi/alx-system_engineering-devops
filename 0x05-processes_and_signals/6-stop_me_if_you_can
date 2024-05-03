@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 # This script attempts to stop the '4-to_infinity_and_beyond' script using the pkill command.
-pkill -f '4-to_infinity_and_beyond.sh'
+if pkill -f '4-to_infinity_and_beyond.sh'; then
+	echo "The process '4-to_infinity_and_beyond.sh' has been successfully terminated."
+else
+	echo "Failed to terminate the process or the process was not running."
+fi
