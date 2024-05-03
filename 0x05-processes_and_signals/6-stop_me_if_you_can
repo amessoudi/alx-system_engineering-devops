@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-# This script stops the '4-to_infinity_and_beyond' script by directly writing to its /proc entry.
-pid=$(pgrep -f '4-to_infinity_and_beyond.sh')
-if [ -z "$pid" ]; then
-    echo "The process '4-to_infinity_and_beyond.sh' is not running."
-else
-    echo -n "TERM" > "/proc/${pid}/signal"
-    echo "Process '4-to_infinity_and_beyond.sh' has been terminated via /proc."
-fi
+# Kills the 4-to_infinity_and_beyond process.
+
+pkill -f 4-to_infinity_and_beyond
