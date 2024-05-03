@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This script displays lines containing the "bash" word, including its PID.
 # shellcheck disable=SC2009
-ps -e
-grep 'bash$' | sort -nk 1
+ps -eo pid,ppid,user,args --forest
+awk '/bash$/{print $1}'
