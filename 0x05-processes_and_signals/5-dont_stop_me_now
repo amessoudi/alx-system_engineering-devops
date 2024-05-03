@@ -8,4 +8,3 @@ else
     kill "$pid"
     echo "Process '4-to_infinity_and_beyond' has been terminated."
 fi
-
