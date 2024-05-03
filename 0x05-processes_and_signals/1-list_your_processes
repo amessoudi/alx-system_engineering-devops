@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-# This script displays a list of all running processes with hierarchy
+
+# This script displays a list of all running processes with hierarchy.
+
 ps -eo pid,ppid,user,args --forest | sort -nk 2
+
+# Ensure script ends with a newline
 echo
