@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script attempts to stop the '4-to_infinity_and_beyond' script using the pkill command.
-if pkill -f '4-to_infinity_and_beyond.sh'; then
-	echo "Terminated"
-fi
+# This script stops the '4-to_infinity_and_beyond' script by sending a termination signal using pkill.
+
+# Use pkill to send the SIGTERM signal to any process that matches the full command line pattern.
+pkill -f '4-to_infinity_and_beyond'
