@@ -5,4 +5,4 @@ do
   if grep -q 'bash' "$pid/comm" 2>/dev/null; then
 	echo "$(basename $pid) $(cat $pid/comm)"
   fi
-doneim
+done
