@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # This script stops the '4-to_infinity_and_beyond' script by terminating its process.
-
 pid=$(pgrep -f '4-to_infinity_and_beyond')
 if [ -z "$pid" ]; then
     echo "The process '4-to_infinity_and_beyond' is not running."
