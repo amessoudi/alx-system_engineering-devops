@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Init script to manage the manage_my_process script as a daemon
 
 case "$1" in
