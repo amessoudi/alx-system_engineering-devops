@@ -2,4 +2,4 @@
 # This script analyzes and sorts Apache access log entries. It groups entries by IP and HTTP status code,
 # outputs the occurrence count along with the IP and HTTP status, and displays the top 10 most frequent entries.
 
-awk '{count[$1 " " $9]++} END {for (combo in count) print count[combo], combo}' apache-access.log | sort -rn -k1,1
+awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -nr
