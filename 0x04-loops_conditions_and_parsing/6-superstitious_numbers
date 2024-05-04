@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
-# This script displays numbers from 1 to 20 and shows special messages on specific iterations using a case statement.
+# This script displays numbers from 1 to 20 and outputs a special message after specific numbers.
 
 count=1  # Initialize the counter
 while [ $count -le 20 ]; do  # Loop from 1 to 20
+    echo "$count"  # Always display the current number
     case $count in
         4)
-            echo "bad luck from China"  # Special message for 4th iteration
+            echo "bad luck from China"  # Special message after the number 4
             ;;
         9)
-            echo "bad luck from Japan"  # Special message for 9th iteration
+            echo "bad luck from Japan"  # Special message after the number 9
             ;;
         17)
-            echo "bad luck from Italy"  # Special message for 17th iteration
-            ;;
-        *)
-            echo "$count"  # Default case to display the number
+            echo "bad luck from Italy"  # Special message after the number 17
             ;;
     esac
     count=$((count + 1))  # Increment the counter
