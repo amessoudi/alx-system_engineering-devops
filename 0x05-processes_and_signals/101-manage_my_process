@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 # Init script to manage the manage_my_process script as a daemon
-
+PIDFILE=/var/run/my_process.pid
+DAEMON=manage_my_process
 case "$1" in
     start)
-        echo "Starting my_process..."
+        echo "manage_my_process started"
         /bin/bash manage_my_process &
-        echo $! > /tmp/manage_my_process.pid
+        echo $! > $PIDFILE
         ;;
     stop)
-        echo "Stopping my_process..."
-        kill $(cat /tmp/manage_my_process.pid)
-        rm /tmp/manage_my_process.pid
+        echo "manage_my_process stopped"
+        kill $(cat $PIDFILE)
+        rm $PIDFILE
         ;;
     restart)
-        echo "Restarting my_process..."
+        echo "manage_my_process started restarted"
         $0 stop
         $0 start
         ;;
     *)
-        echo "Usage: $0 {start|stop|restart}"
+        echo "Usage: manage_my_process {start|stop|restart}"
         exit 1
 esac
