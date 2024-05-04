@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
-# This script prints 'Best School' 10 times using an until loop.
+# This script prints 'Best School' 10 times. On the 9th iteration, it also prints 'Hi' on a new line.
 
 count=1  # Initialize the counter
-until [ $count -gt 10 ]; do  # Continue loop until the counter is greater than 10
+while [ $count -le 10 ]; do  # Loop until the counter exceeds 10
     echo "Best School"  # Output the string
+
+    if [ $count -eq 9 ]; then  # Check if it's the 9th iteration
+        echo "Hi"  # Print 'Hi' on a new line
+    fi
+
     count=$((count + 1))  # Increment the counter
 done
