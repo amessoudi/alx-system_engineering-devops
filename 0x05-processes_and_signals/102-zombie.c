@@ -24,7 +24,6 @@ int infinite_while(void)
 int main(void)
 {
 	pid_t pid;
-
 	char count = 0;
 
 	while (count < 5)
@@ -39,7 +38,6 @@ int main(void)
 		else
 			exit(0);
 	}
-
 	infinite_while();
 	return (EXIT_SUCCESS);
 }
