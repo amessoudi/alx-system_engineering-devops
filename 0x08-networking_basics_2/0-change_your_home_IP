@@ -1,0 +1,38 @@
+#!/bin/bash
+# Bash script for configuring /etc/hosts in a Docker container
+
+# Check for root privileges
+if [ "$(id -u)" -ne 0 ]; then
+  echo "This script must be run as root" >&2
+  exit 1
+fi
+
+# Define the path to the hosts file and the temporary copy
+HOSTS_FILE="/etc/hosts"
+TEMP_HOSTS_FILE="~/hosts.new"
+
+# Create a new temporary hosts file
+cp $HOSTS_FILE $TEMP_HOSTS_FILE
+
+# Define new entries
+LOCALHOST_ENTRY="127.0.0.2 localhost"
+FACEBOOK_ENTRY="8.8.8.8 facebook.com"
+
+# Remove any existing entries from the temporary hosts file to avoid duplicates
+sed -i '/localhost/d' $TEMP_HOSTS_FILE
+sed -i '/facebook.com/d' $TEMP_HOSTS_FILE
+
+# Append new entries to the temporary hosts file
+echo "$LOCALHOST_ENTRY" >> $TEMP_HOSTS_FILE
+echo "$FACEBOOK_ENTRY" >> $TEMP_HOSTS_FILE
+
+# Replace the original hosts file with the modified temporary file
+cp -f $TEMP_HOSTS_FILE $HOSTS_FILE
+
+# Clean up: remove the temporary file
+rm $TEMP_HOSTS_FILE
+
+echo "Hosts file has been updated successfully."
+
+# Inform user of completion
+echo "The script has completed. localhost and facebook.com should now resolve to the specified IPs."
