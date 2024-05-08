@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Bash script for configuring /etc/hosts in a Docker container
 
 # Check for root privileges
