@@ -9,7 +9,7 @@ fi
 
 # Define the path to the hosts file and the temporary copy
 HOSTS_FILE="/etc/hosts"
-TEMP_HOSTS_FILE="$HOME/hosts.new"
+TEMP_HOSTS_FILE="etc/hosts.new"
 
 # Create a new temporary hosts file
 cp $HOSTS_FILE "$TEMP_HOSTS_FILE"
