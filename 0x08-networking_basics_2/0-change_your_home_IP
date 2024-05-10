@@ -9,7 +9,7 @@ fi
 
 # Define the path to the hosts file and the temporary copy
 HOSTS_FILE="/etc/hosts"
-TEMP_HOSTS_FILE="etc/hosts.new"
+TEMP_HOSTS_FILE="$HOME/hosts.new"
 
 # Create a new temporary hosts file
 cp $HOSTS_FILE "$TEMP_HOSTS_FILE"
@@ -31,8 +31,3 @@ cp -f "$TEMP_HOSTS_FILE" $HOSTS_FILE
 
 # Clean up: remove the temporary file
 rm "$TEMP_HOSTS_FILE"
-
-echo "Hosts file has been updated successfully."
-
-# Inform user of completion
-echo "The script has completed. localhost and facebook.com should now resolve to the specified IPs."
